@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghna Londhe — Operations & Strategy Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F2;
+    --blush: #F2E8E1;
+    --rose: #C4829A;
+    --deep-rose: #9B5E74;
+    --plum: #3D2B35;
+    --gold: #C9A96E;
+    --charcoal: #2D2D2D;
+    --muted: #8A7A82;
+    --white: #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196, 130, 154, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--plum);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--rose); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 6rem;
+    position: relative;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(196,130,154,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--plum);
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--rose);
+  }
+
+  .hero-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--charcoal);
+    max-width: 480px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+
+  .btn-primary {
+    background: var(--plum);
+    color: var(--white);
+    border: none;
+    padding: 0.875rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--rose); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--plum);
+    border: 1px solid var(--plum);
+    padding: 0.875rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-outline:hover { background: var(--plum); color: white; transform: translateY(-2px); }
+
+  .hero-right {
+    background: var(--blush);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: 'ML';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem;
+    font-weight: 300;
+    color: rgba(196,130,154,0.08);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    width: 100%;
+    max-width: 380px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1.2s;
+  }
+
+  .stat-card {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    position: relative;
+  }
+
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--rose);
+    transition: width 0.4s ease;
+  }
+
+  .stat-card:hover::after { width: 100%; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--plum);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  section { padding: 6rem 6rem; }
+
+  .section-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    color: var(--plum);
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--rose);
+    margin: 2rem 0;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--plum);
+    line-height: 1.6;
+    border-left: 2px solid var(--rose);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-highlights { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: var(--cream);
+    border-left: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .highlight-item:hover { border-color: var(--rose); }
+
+  .highlight-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .highlight-text strong {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--plum);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+  }
+
+  .highlight-text span { font-size: 0.9rem; color: var(--muted); }
+
+  /* EXPERTISE */
+  .expertise { background: var(--cream); }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .expertise-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .expertise-card:hover { transform: translateY(-4px); }
+
+  .expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--rose);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .expertise-card:hover::before { transform: scaleX(1); }
+
+  .expertise-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(196,130,154,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .expertise-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--plum);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .expertise-desc { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+
+  /* EXPERIENCE */
+  .experience { background: var(--plum); color: var(--white); }
+  .experience .section-tag { color: var(--rose); }
+  .experience .section-title { color: var(--white); }
+  .experience .section-title em { color: var(--rose); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1px 1fr;
+    gap: 0 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .timeline-date { text-align: right; padding-top: 0.25rem; }
+
+  .timeline-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--rose);
+    display: block;
+  }
+
+  .timeline-period {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .timeline-line {
+    background: rgba(196,130,154,0.3);
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--rose);
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-company {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .timeline-achievements { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .timeline-achievements li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .timeline-achievements li::before { content: '—'; position: absolute; left: 0; color: var(--rose); }
+
+  /* SKILLS */
+  .skills {
+    background: var(--blush);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .skill-group { margin-bottom: 2.5rem; }
+
+  .skill-group-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .skill-tag {
+    background: var(--white);
+    color: var(--plum);
+    padding: 0.4rem 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .skill-tag:hover { border-color: var(--rose); color: var(--rose); }
+
+  .education-card {
+    background: var(--white);
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border-left: 2px solid var(--rose);
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--plum);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-school {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .edu-year {
+    font-size: 0.8rem;
+    color: var(--rose);
+    margin-top: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+
+  /* RECOGNITION */
+  .recognition { background: var(--white); text-align: center; }
+  .recognition .section-tag, .recognition .section-title { text-align: center; }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .award-card {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(196,130,154,0.2);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .award-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--rose);
+    transform: scaleX(0);
+    transition: transform 0.4s;
+  }
+
+  .award-card:hover::after { transform: scaleX(1); }
+  .award-card:hover { border-color: var(--rose); }
+
+  .award-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+  .award-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--plum);
+    margin-bottom: 0.5rem;
+  }
+
+  .award-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* CONTACT */
+  .contact {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(196,130,154,0.2);
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-value { font-size: 0.95rem; color: var(--plum); font-weight: 400; }
+
+  .contact-right { background: var(--blush); padding: 3rem; }
+
+  .contact-right p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--plum);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .location-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  .location-tag {
+    background: var(--white);
+    color: var(--muted);
+    padding: 0.4rem 0.875rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  footer {
+    background: var(--plum);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  footer span { color: var(--rose); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .about, .skills, .contact { grid-template-columns: 1fr; gap: 3rem; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .awards-grid { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 80px 1px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Meghna Londhe</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">Operations & Strategy Leader</p>
+    <h1 class="hero-name">Meghna<br><em>Londhe</em></h1>
+    <p class="hero-title">Head of Customer Delivery &nbsp;·&nbsp; AI Transformation &nbsp;·&nbsp; Global OTT</p>
+    <p class="hero-desc">Senior leader who built a 200+ person organisation from scratch, drove AI-powered transformation for 100+ enterprise clients, and brings a people-first approach to every challenge.</p>
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get In Touch</button>
+      <button class="btn-outline" onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">View Experience</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Years of Leadership</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Team Built from Zero</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Enterprise Clients</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">90%+</div>
+        <div class="stat-label">Quality Achievement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="fade-in">
+    <p class="section-tag">About</p>
+    <h2 class="section-title">Turning <em>ambiguity</em> into impact</h2>
+    <div class="divider"></div>
+    <div class="about-quote">"I don't just manage operations — I architect them."</div>
+    <p class="about-text">I started as a Software Engineer, moved into sports content, led AI product development, and then spent six years building Magnifi's delivery organisation from the ground up — scaling it to 200+ people across global OTT and sports media clients.</p>
+    <p class="about-text">Today, I lead with data, execute with precision, and build teams that are proud of their work. My edge is the rare combination of technical understanding, AI transformation experience, and genuine people-first leadership.</p>
+  </div>
+  <div class="about-highlights fade-in">
+    <div class="highlight-item">
+      <div class="highlight-icon">🚀</div>
+      <div class="highlight-text">
+        <strong>Built from Zero</strong>
+        <span>Created a 200+ person delivery organisation with no template, no playbook — just vision and execution.</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">🤖</div>
+      <div class="highlight-text">
+        <strong>AI Transformation Pioneer</strong>
+        <span>Led end-to-end AI adoption across an enterprise platform — not as a concept, but as a programme owner who made it real.</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">🌍</div>
+      <div class="highlight-text">
+        <strong>Global Enterprise Scale</strong>
+        <span>100+ enterprise clients across sports broadcasters and OTT platforms spanning multiple regions and time zones.</span>
+      </div>
+    </div>
+    <div class="highlight-item">
+      <div class="highlight-icon">💛</div>
+      <div class="highlight-text">
+        <strong>People-First Leader</strong>
+        <span>Nominated for the Rise Awards 2023 and featured in Magnifi's leadership story series for building a high-performance, values-led culture.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="expertise" id="expertise">
+  <p class="section-tag fade-in">Core Expertise</p>
+  <h2 class="section-title fade-in">Six pillars of <em>excellence</em></h2>
+  <div class="expertise-grid fade-in">
+    <div class="expertise-card">
+      <div class="expertise-number">01</div>
+      <div class="expertise-title">Operations Strategy</div>
+      <div class="expertise-desc">Designing and scaling operational systems that run with consistency and speed — KPI frameworks, governance structures, and the playbooks that make scale possible.</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-number">02</div>
+      <div class="expertise-title">AI & Digital Transformation</div>
+      <div class="expertise-desc">Leading AI adoption from concept to production — building the change management, technical readiness, and human capability that makes transformation stick.</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-number">03</div>
+      <div class="expertise-title">Enterprise Client Leadership</div>
+      <div class="expertise-desc">Trusted advisor to C-suite stakeholders across 100+ global accounts — translating complex delivery realities into confident executive narratives.</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-number">04</div>
+      <div class="expertise-title">Programme Delivery</div>
+      <div class="expertise-desc">End-to-end programme ownership across complex, multi-workstream environments — from planning and governance through execution and benefit realisation.</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-number">05</div>
+      <div class="expertise-title">Team Building & Culture</div>
+      <div class="expertise-desc">Building high-performance organisations from scratch — hiring, developing, and retaining talent at every layer, with a people-first culture at the foundation.</div>
+    </div>
+    <div class="expertise-card">
+      <div class="expertise-number">06</div>
+      <div class="expertise-title">Sports & OTT Media</div>
+      <div class="expertise-desc">Deep industry knowledge across global sports broadcasters, OTT platforms, and content delivery — understanding how rights holders and streamers create value.</div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <p class="section-tag fade-in">Career Journey</p>
+  <h2 class="section-title fade-in">A decade of <em>building</em></h2>
+  <div class="timeline fade-in">
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span class="timeline-year">2025</span>
+        <span class="timeline-period">Present</span>
+      </div>
+      <div class="timeline-line"><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Head of Customer Delivery</div>
+        <div class="timeline-company">Magnifi by Videoverse · Global AI-Driven Enterprise Platform</div>
+        <ul class="timeline-achievements">
+          <li>Built and scaled a 200+ person delivery organisation from zero</li>
+          <li>Drove AI transformation across 100+ global enterprise accounts</li>
+          <li>Elevated quality performance from 70% to 90%+ through governance frameworks</li>
+          <li>Designed 30+ operational playbooks enabling delivery at scale</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span class="timeline-year">2023</span>
+        <span class="timeline-period">2025</span>
+      </div>
+      <div class="timeline-line"><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Deputy Head of Customer Delivery</div>
+        <div class="timeline-company">Magnifi by Videoverse</div>
+        <ul class="timeline-achievements">
+          <li>Co-designed strategic transformation roadmap during high-growth phase</li>
+          <li>Built KPI and performance frameworks from scratch</li>
+          <li>Led resource planning across global portfolio under pressure</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span class="timeline-year">2021</span>
+        <span class="timeline-period">2023</span>
+      </div>
+      <div class="timeline-line"><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Project Manager</div>
+        <div class="timeline-company">Magnifi by Videoverse</div>
+        <ul class="timeline-achievements">
+          <li>Managed complex multi-stakeholder transformation programmes</li>
+          <li>Nominated for Rise Awards 2023 — Project Management Category</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span class="timeline-year">2018</span>
+        <span class="timeline-period">2020</span>
+      </div>
+      <div class="timeline-line"><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-role">AI Content & Sports Media</div>
+        <div class="timeline-company">Bridged AI · Magnifi by Videoverse</div>
+        <ul class="timeline-achievements">
+          <li>Built content and quality frameworks for AI-driven platforms</li>
+          <li>Promoted from writer to editor within one month at Bridged AI</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">
+        <span class="timeline-year">2015</span>
+        <span class="timeline-period">2018</span>
+      </div>
+      <div class="timeline-line"><div class="timeline-dot"></div></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Software Engineer</div>
+        <div class="timeline-company">Tech Mahindra · AT&T Account</div>
+        <ul class="timeline-achievements">
+          <li>Managed enterprise client SLA performance for AT&T</li>
+          <li>Built foundation in technology operations and client governance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="fade-in">
+    <p class="section-tag">Capabilities</p>
+    <h2 class="section-title">Skills &amp; <em>expertise</em></h2>
+    <div class="skill-group">
+      <div class="skill-group-title">Leadership & Strategy</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Operations Strategy</span>
+        <span class="skill-tag">Team Leadership</span>
+        <span class="skill-tag">C-Suite Advisory</span>
+        <span class="skill-tag">Stakeholder Management</span>
+        <span class="skill-tag">Change Management</span>
+        <span class="skill-tag">Strategic Planning</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Technology & Innovation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">AI Transformation</span>
+        <span class="skill-tag">Cloud Computing</span>
+        <span class="skill-tag">CRM Systems</span>
+        <span class="skill-tag">KPI Frameworks</span>
+        <span class="skill-tag">Data-Driven Decision Making</span>
+        <span class="skill-tag">Process Automation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Industry</div>
+      <div class="skill-tags">
+        <span class="skill-tag">OTT & Streaming</span>
+        <span class="skill-tag">Sports Media</span>
+        <span class="skill-tag">Enterprise SaaS</span>
+        <span class="skill-tag">Digital Platforms</span>
+        <span class="skill-tag">Content Delivery</span>
+      </div>
+    </div>
+  </div>
+  <div class="fade-in">
+    <p class="section-tag">Education</p>
+    <h2 class="section-title">Academic <em>foundation</em></h2>
+    <div class="education-card">
+      <div class="edu-degree">Post-Graduate Diploma in Cloud Computing</div>
+      <div class="edu-school">Caltech — Distance Learning</div>
+      <div class="edu-year">2023 – 2024</div>
+    </div>
+    <div class="education-card">
+      <div class="edu-degree">Bachelor of Science — Chemistry</div>
+      <div class="edu-school">R.D. National College, W.A. Science College</div>
+      <div class="edu-year">2012 – 2015</div>
+    </div>
+  </div>
+</section>
+
+<section class="recognition" id="recognition">
+  <p class="section-tag fade-in">Recognition</p>
+  <h2 class="section-title fade-in">Moments of <em>distinction</em></h2>
+  <div class="awards-grid fade-in">
+    <div class="award-card">
+      <div class="award-icon">🏆</div>
+      <div class="award-title">Rise Awards 2023</div>
+      <div class="award-desc">Nominated in the Project Management category — recognised for consistently delivering complex programmes in high-pressure, ambiguous environments.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">✨</div>
+      <div class="award-title">Leadership Story Series</div>
+      <div class="award-desc">Featured in Magnifi's leadership story series for building a people-first, high-performance culture across 100+ global enterprise accounts.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🚀</div>
+      <div class="award-title">Scale Achievement</div>
+      <div class="award-desc">Built and scaled a 200+ person delivery organisation from zero — one of the most significant operational achievements in Magnifi's growth story.</div>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">🤖</div>
+      <div class="award-title">AI Transformation Pioneer</div>
+      <div class="award-desc">Led one of the first end-to-end AI transformation programmes in OTT content delivery — driving quality from 70% to 90%+ through innovation and disciplined execution.</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="fade-in">
+    <p class="section-tag">Contact</p>
+    <h2 class="section-title">Let's <em>connect</em></h2>
+    <div class="divider"></div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <span class="contact-label">Email</span>
+        <span class="contact-value">meghnalondhe77@gmail.com</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div>
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">+91 9619189531</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💼</div>
+      <div>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">linkedin.com/in/meghnalondhe-36116a15b</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <span class="contact-label">Based In</span>
+        <span class="contact-value">Mumbai, India</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right fade-in">
+    <p>"Open to the right opportunity — wherever in the world it takes me."</p>
+    <p class="section-tag" style="margin-bottom:1rem;">Open to relocate</p>
+    <div class="location-tags">
+      <span class="location-tag">🇮🇳 Mumbai</span>
+      <span class="location-tag">🇸🇬 Singapore</span>
+      <span class="location-tag">🇬🇧 London</span>
+      <span class="location-tag">🇮🇪 Dublin</span>
+      <span class="location-tag">🇦🇺 Sydney</span>
+      <span class="location-tag">🇨🇦 Toronto</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Meghna Londhe &nbsp;·&nbsp; Operations & Strategy Leader &nbsp;·&nbsp; <span>Available for the right opportunity</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
